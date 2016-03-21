@@ -327,7 +327,7 @@ void SocketMonitor::processExceptSet( Strategy& strategy, fd_set& exceptSet )
 
 void SocketMonitor::buildSet( const Sockets& sockets, fd_set& watchSet )
 {
-  Sockets::const_iterator iter;
+  Sockets::iterator iter;
   for ( iter = sockets.begin(); iter != sockets.end(); ++iter ) {
     FD_SET( *iter, &watchSet );
   }

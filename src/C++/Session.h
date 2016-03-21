@@ -79,6 +79,7 @@ public:
   const DataDictionaryProvider& getDataDictionaryProvider() const
   { return m_dataDictionaryProvider; }
 
+#if 0 //TODO: Verificar
   static bool sendToTarget( Message& message,
                             const std::string& qualifier = "" )
   throw( SessionNotFound );
@@ -94,6 +95,7 @@ public:
                             const std::string& targetCompID,
                             const std::string& qualifier = "" )
   throw( SessionNotFound );
+#endif
 
   static std::set<SessionID> getSessions();
   static bool doesSessionExist( const SessionID& );

@@ -1392,6 +1392,7 @@ void Session::next( const Message& message, const UtcTimeStamp& timeStamp, bool 
     next();
 }
 
+#if 0 //TODO: Verificar
 bool Session::sendToTarget( Message& message, const std::string& qualifier )
 throw( SessionNotFound )
 {
@@ -1432,6 +1433,7 @@ throw( SessionNotFound )
   return sendToTarget( message, SenderCompID( sender ),
                        TargetCompID( target ), qualifier );
 }
+#endif
 
 std::set<SessionID> Session::getSessions()
 {
