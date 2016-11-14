@@ -209,7 +209,7 @@ public:
                           int bodyLengthField = FIELD::BodyLength,
                           int checkSumField = FIELD::CheckSum ) const;
 
-  int calculateTotal( int checkSumField = FIELD::CheckSum ) const;
+  unsigned int calculateTotal( int checkSumField = FIELD::CheckSum ) const;
 
   iterator begin() const { return m_fields.begin(); }
   iterator end() const { return m_fields.end(); }

@@ -215,7 +215,7 @@ size_t FieldMap::calculateLength( int beginStringField,
   return result;
 }
 
-int FieldMap::calculateTotal( int checkSumField ) const
+unsigned int FieldMap::calculateTotal( int checkSumField ) const
 {
   int result = 0;
   Fields::const_iterator i;

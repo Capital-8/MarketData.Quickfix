@@ -50,7 +50,7 @@ class FieldBase
   {
   public:
 
-    field_metrics( const size_t length, const int checksum )
+    field_metrics( const size_t length, const unsigned int checksum )
       : m_length( length )
       , m_checksum( checksum )
     {}
@@ -58,7 +58,7 @@ class FieldBase
     size_t getLength() const
     { return m_length; }
 
-    int getCheckSum() const
+    unsigned int getCheckSum() const
     { return m_checksum; }
 
     bool isValid() const
@@ -67,7 +67,7 @@ class FieldBase
   private:
 
     size_t m_length;
-    int m_checksum;
+    unsigned int m_checksum;
   };
 
   friend class Message;
@@ -129,7 +129,7 @@ public:
   }
 
   /// Get the total value the fields characters added together
-  int getTotal() const
+  unsigned int getTotal() const
   {
     calculate();
     return m_metrics.getCheckSum();
@@ -174,7 +174,7 @@ private:
     std::string::const_iterator const start,
     std::string::const_iterator const end )
   {
-    int checksum = 0;
+    unsigned int checksum = 0;
     for ( std::string::const_iterator str = start; str != end; ++str )
       checksum += (unsigned char)( *str );
 
