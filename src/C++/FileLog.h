@@ -70,19 +70,21 @@ private:
 class FileLog : public Log
 {
 public:
-  FileLog( const std::string& path );
-  FileLog( const std::string& path, const std::string& backupPath );
-  FileLog( const std::string& path, const SessionID& sessionID );
-  FileLog( const std::string& path, const std::string& backupPath, const SessionID& sessionID );
+  FileLog( const std::string& path, bool logMessages );
+  FileLog( const std::string& path, const std::string& backupPath, bool logMessages);
+  FileLog( const std::string& path, const SessionID& sessionID, bool logMessages);
+  FileLog( const std::string& path, const std::string& backupPath, const SessionID& sessionID, bool logMessages);
   virtual ~FileLog();
 
   void clear();
   void backup();
 
   void onIncoming( const std::string& value )
-  { m_messages << UtcTimeStampConvertor::convert(UtcTimeStamp(), m_millisecondsInTimeStamp) << " : " << value << std::endl; }
+  { if (m_logMessages) m_messages << UtcTimeStampConvertor::convert(UtcTimeStamp(), m_millisecondsInTimeStamp) << " : " << value << std::endl; }
+
   void onOutgoing( const std::string& value )
-  { m_messages << UtcTimeStampConvertor::convert(UtcTimeStamp(), m_millisecondsInTimeStamp) << " : " << value << std::endl; }
+  { if (m_logMessages) m_messages << UtcTimeStampConvertor::convert(UtcTimeStamp(), m_millisecondsInTimeStamp) << " : " << value << std::endl; }
+
   void onEvent( const std::string& value )
   {
     UtcTimeStamp now;
@@ -106,6 +108,7 @@ private:
   std::string m_fullPrefix;
   std::string m_fullBackupPrefix;
   bool m_millisecondsInTimeStamp;
+  bool m_logMessages;
 };
 }
 

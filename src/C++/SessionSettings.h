@@ -74,6 +74,7 @@ const char VALIDATE_USER_DEFINED_FIELDS[] = "ValidateUserDefinedFields";
 const char LOGON_TIMEOUT[] = "LogonTimeout";
 const char LOGOUT_TIMEOUT[] = "LogoutTimeout";
 const char FILE_STORE_PATH[] = "FileStorePath";
+const char FILE_LOG_LOG_MESSAGES[] = "FileLogLogMessages";
 const char MYSQL_STORE_USECONNECTIONPOOL[] = "MySQLStoreUseConnectionPool";
 const char MYSQL_STORE_DATABASE[] = "MySQLStoreDatabase";
 const char MYSQL_STORE_USER[] = "MySQLStoreUser";
