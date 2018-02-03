@@ -1392,7 +1392,7 @@ void Session::next( const Message& message, const UtcTimeStamp& timeStamp, bool 
     next();
 }
 
-#if 0 //TODO: Verificar
+#if 1 //TODO: Verificar
 bool Session::sendToTarget( Message& message, const std::string& qualifier )
 throw( SessionNotFound )
 {
