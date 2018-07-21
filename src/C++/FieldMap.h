@@ -134,10 +134,19 @@ public:
   }
 
   /// Get direct access to a field through a pointer
-  const FieldBase* const getFieldPtr( int field )
-  const throw( FieldNotFound )
+  const FieldBase* const getFieldPtr(int field)
+	  const throw(FieldNotFound)
   {
-    return &getFieldRef( field );
+	  return &getFieldRef(field);
+  }
+
+  /// Get direct access to a field through a pointer
+  const FieldBase* const getFieldPtrIfExists(int field)
+	  const
+  {
+	  if (isSetField(field))
+		return &getFieldRef(field);
+	  return nullptr;
   }
 
   /// Check to see if a field is set
