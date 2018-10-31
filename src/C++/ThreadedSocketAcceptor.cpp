@@ -98,7 +98,7 @@ throw ( RuntimeError )
     const int rcvBufSize = settings.has( SOCKET_RECEIVE_BUFFER_SIZE ) ?
       settings.getInt( SOCKET_RECEIVE_BUFFER_SIZE ) : 0;
 
-    int socket = socket_createAcceptor( port, reuseAddress );
+    SOCKET socket = socket_createAcceptor( port, reuseAddress );
     if( socket < 0 )
     {
       SocketException e;
