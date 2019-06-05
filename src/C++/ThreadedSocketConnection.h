@@ -64,7 +64,7 @@ private:
   bool send( const std::string&, long msgSeqNum );
   bool setSession( const std::string& msg );
 
-  virtual size_t size();
+  virtual size_t size() { return 0; }
 
   SOCKET m_socket;
   char m_buffer[BUFSIZ];
